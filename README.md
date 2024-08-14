@@ -32,7 +32,7 @@ Restart Nezha Panel：通过SSH登录到服务器，并执行重启哪吒面板�
    ```json
    [
        {
-           "host": "s7.serv00.com",   //ssh的连接地址
+           "host": "s7.serv00.com",
            "port": 22,
            "username": "user1",
            "password": "password1"
