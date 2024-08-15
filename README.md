@@ -46,7 +46,7 @@ Restart Nezha Panel：通过SSH登录到服务器，并执行重启哪吒面板�
    ]
 
    ```
-        - `TELEGRAM_BOT_TOKEN`: 你的 Telegram Bot 的 API Token。
+        - `TELEGRAM_TOKEN`: 你的 Telegram Bot 的 API Token。
         - `TELEGRAM_CHAT_ID`: 你的 Telegram Chat ID。
 
     - **获取方法**：
