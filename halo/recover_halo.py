@@ -48,7 +48,7 @@ summary_message = "halo博客恢复操作结果：\n"
 
 # 默认恢复命令（使用手动确定的 pm2 路径）
 pm2_path = "/home/hhyyx1/.npm-global/bin/pm2"
-default_restore_command = f"cd domains/hl.wzcc.us.kg/public_html && chmod +x run.sh && pm2 start ./run.sh --name halo"
+default_restore_command = f"cd domains/hlo.7374520.xyz/public_html && chmod +x run.sh && pm2 start ./run.sh --name halo"
 
 # 遍历服务器列表并执行恢复操作
 for server in servers:
