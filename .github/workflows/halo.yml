@@ -2,7 +2,7 @@ name: 恢复halo服务并发送Telegram消息
 
 on:
   schedule:
-    - cron: '*/59 * * * *'  # 每59分钟执行一次
+    - cron: '0 */2 * * *'  # 每两小时执行一次
   workflow_dispatch:
 
 jobs:
