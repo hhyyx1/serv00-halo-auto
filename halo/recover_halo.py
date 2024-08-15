@@ -48,7 +48,7 @@ summary_message = "halo博客恢复操作结果：\n"
 
 # 默认恢复命令（使用手动确定的 pm2 路径）
 pm2_path = "/home/hhyyx1/.npm-global/bin/pm2"
-default_restore_command = f"cd domains/hlo.7374520.xyz/public_html && chmod +x run.sh && pm2 start ./run.sh --name halo"
+default_restore_command = f"cd domains/hlo.7374520.xyz/public_html && chmod +x run.sh && {pm2_path} start ./run.sh --name halo"
 
 # 遍历服务器列表并执行恢复操作
 for server in servers:
@@ -61,7 +61,7 @@ for server in servers:
     print(f"连接到 {host}...")
 
     # 执行恢复命令（这里假设使用 SSH 连接和密码认证）
-    restore_command = f"sshpass -p '{password}' ssh -o StrictHostKeyChecking=no -p {port} {username}@{host} '{cron_command}'"
+    restore_command = f"sshpass -p '{password}' ssh -o StrictHostKeyChecking=no -p {port} {username}@{host} 'export PATH=$PATH:{os.path.dirname(pm2_path)} && {cron_command}'"
     try:
         output = subprocess.check_output(restore_command, shell=True, stderr=subprocess.STDOUT)
         summary_message += f"\n成功恢复 {host} 上的halo博客服务：\n{output.decode('utf-8')}"
